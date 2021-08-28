@@ -11,3 +11,4 @@ An app developed using Apple's SqueezeNet CoreML with ability to detect differen
 - Speak out result
 - Flash controll integration
 
+![Finished App](https://github.com/arsalansasa/images/blob/main/picturedc_demo.png)
