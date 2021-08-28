@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="CameraDetectionCoreML" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sJi-ZJ-TOe"/>
+                        <viewControllerLayoutGuide type="bottom" id="xId-YB-QH7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcp-Lu-xVW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Txa-pG-FBY">
+                                <rect key="frame" x="259" y="637" width="130" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="9XK-Nq-yjv"/>
+                                    <constraint firstAttribute="height" constant="200" id="gEU-6L-Jbx"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEA-CS-g4R">
+                                <rect key="frame" x="25" y="802" width="90" height="35"/>
+                                <color key="backgroundColor" red="0.88894317789999999" green="0.92938923399999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="lCC-Tc-flE"/>
+                                    <constraint firstAttribute="width" constant="90" id="p7q-1i-6sy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                                <state key="normal" title="Flash Off">
+                                    <color key="titleColor" red="0.81198567150000001" green="0.30365717409999998" blue="0.23917132620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="flashBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rla-Fy-OMW"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPO-6h-gkv">
+                                <rect key="frame" x="20" y="74" width="374" height="65"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="h5S-Aw-aWp">
+                                        <rect key="frame" x="8" y="8" width="358" height="49"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Image predictions will display here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="1BT-vD-VUc">
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="19"/>
+                                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="19"/>
+                                                <color key="textColor" red="0.81198567150000001" green="0.30365717409999998" blue="0.23917132620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confidence:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgk-68-asW">
+                                                <rect key="frame" x="0.0" y="25" width="358" height="24"/>
+                                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="h5S-Aw-aWp" firstAttribute="leading" secondItem="IPO-6h-gkv" secondAttribute="leading" constant="8" id="Iyc-f3-sdb"/>
+                                    <constraint firstItem="h5S-Aw-aWp" firstAttribute="top" secondItem="IPO-6h-gkv" secondAttribute="top" constant="8" id="WAs-l1-OHx"/>
+                                    <constraint firstAttribute="height" constant="65" id="dUS-FJ-1ea"/>
+                                    <constraint firstAttribute="bottom" secondItem="h5S-Aw-aWp" secondAttribute="bottom" constant="8" id="jDV-8t-6A4"/>
+                                    <constraint firstAttribute="trailing" secondItem="h5S-Aw-aWp" secondAttribute="trailing" constant="8" id="uGE-Uz-bNW"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="h7q-RY-4KC">
+                                <rect key="frame" x="314" y="727" width="20" height="20"/>
+                                <color key="color" red="0.88894317789999999" green="0.92938923399999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xId-YB-QH7" firstAttribute="top" secondItem="jEA-CS-g4R" secondAttribute="bottom" constant="25" id="0tL-5y-1Fj"/>
+                            <constraint firstItem="jEA-CS-g4R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="J8g-ne-ceL"/>
+                            <constraint firstAttribute="bottom" secondItem="pcp-Lu-xVW" secondAttribute="bottom" id="SK8-LJ-n2E"/>
+                            <constraint firstItem="xId-YB-QH7" firstAttribute="top" secondItem="Txa-pG-FBY" secondAttribute="bottom" constant="25" id="Vg2-wY-1WD"/>
+                            <constraint firstItem="h7q-RY-4KC" firstAttribute="centerX" secondItem="Txa-pG-FBY" secondAttribute="centerX" id="Vl5-go-Il6"/>
+                            <constraint firstItem="pcp-Lu-xVW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XSI-7V-VbN"/>
+                            <constraint firstAttribute="trailing" secondItem="IPO-6h-gkv" secondAttribute="trailing" constant="20" id="Xjg-xX-Cii"/>
+                            <constraint firstItem="IPO-6h-gkv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="alJ-bR-FBd"/>
+                            <constraint firstAttribute="trailing" secondItem="Txa-pG-FBY" secondAttribute="trailing" constant="25" id="kBN-1A-z2j"/>
+                            <constraint firstItem="h7q-RY-4KC" firstAttribute="centerY" secondItem="Txa-pG-FBY" secondAttribute="centerY" id="liv-Tx-Iol"/>
+                            <constraint firstItem="IPO-6h-gkv" firstAttribute="top" secondItem="sJi-ZJ-TOe" secondAttribute="bottom" constant="30" id="ndl-UJ-CgA"/>
+                            <constraint firstItem="pcp-Lu-xVW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wyx-0E-xHa"/>
+                            <constraint firstAttribute="trailing" secondItem="pcp-Lu-xVW" secondAttribute="trailing" id="xPZ-Gx-BOb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="pcp-Lu-xVW" id="Yff-KK-H6a"/>
+                        <outlet property="confidenceLbl" destination="fgk-68-asW" id="G3e-1U-dCT"/>
+                        <outlet property="flashBtn" destination="jEA-CS-g4R" id="oxN-3k-WCW"/>
+                        <outlet property="imgView" destination="Txa-pG-FBY" id="TP8-XG-51E"/>
+                        <outlet property="loadingIndicator" destination="h7q-RY-4KC" id="Qy0-nt-Po0"/>
+                        <outlet property="predictionLbl" destination="1BT-vD-VUc" id="EgV-s4-VXa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63.768115942028992" y="79.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
